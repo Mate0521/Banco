@@ -1,5 +1,11 @@
 package A1;
 
-public class ProductoFinanciero {
-
+public interface ProductoFinanciero {
+    void consignar(double monto);
+    void retirar(double monto);
+    void pagarCredito(double monto);
 }
+/*
+ * 
+ * 
+ */
