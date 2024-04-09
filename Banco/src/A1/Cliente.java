@@ -3,7 +3,7 @@ package A1;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cliente {
+public abstract class Cliente {
     private int id;
     private List<ProductoFinanciero> productosFinancieros;
 

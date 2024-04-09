@@ -10,7 +10,6 @@ public abstract class Producto {
         this.codigo = codigo;
         this.nombre = nombre;
         this.precio = precio;
-        this.descuento = descuento;
     }
 
     public String getCodigo() {
@@ -37,13 +36,7 @@ public abstract class Producto {
         this.precio = precio;
     }
 
-    public double getDescuento() {
-        return descuento;
-    }
 
-    public void setDescuento(double descuento) {
-        this.descuento = descuento;
-    }
 
     public abstract double calcularPrecioFinal();
 }

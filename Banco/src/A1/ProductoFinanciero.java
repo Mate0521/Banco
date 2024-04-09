@@ -5,7 +5,4 @@ public interface ProductoFinanciero {
     void retirar(double monto);
     void pagarCredito(double monto);
 }
-/*
- * 
- * 
- */
+
