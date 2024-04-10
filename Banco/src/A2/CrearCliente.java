@@ -5,35 +5,47 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-//Clase CrearCliente
 public class CrearCliente extends Cliente_1 {
-// Constructor
-public CrearCliente(int id, String clave, String nombre, String numeroTelefono, String direccion) {
-   super(id, clave, nombre, numeroTelefono, direccion);
-}
+
+	public CrearCliente( int id, String clave, String nombre, String numeroTelefono, String direccion) {
+		super(id, clave, nombre, numeroTelefono, direccion);
+	}
 
 // Implementación del método crearArchivoTXT
-@Override
-public void crearArchivoTXT() {
-   try {
-       // Crear el archivo TXT con el nombre del ID del cliente
-       File archivo = new File(id + ".txt");
-       FileWriter escritor = new FileWriter(archivo);
-       BufferedWriter buffer = new BufferedWriter(escritor);
+	@Override
+	public void crearArchivoTXT() {
+        try {
+            File file = new File(id + ".txt");
+            FileWriter fw = new FileWriter(file);
+            BufferedWriter bw = new BufferedWriter(fw);
 
-       // Escribir la clave en el archivo
-       buffer.write(clave);
-       buffer.newLine();
+            bw.write(clave);
+            bw.newLine();
+            bw.write(nombre);
+            bw.newLine();
+            bw.write(numeroTelefono);
+            bw.newLine();
+            bw.write(direccion);
+            bw.newLine();
+            bw.write("#011=false");
+            bw.newLine();
+            bw.write("#012=false");
+            bw.newLine();
+            bw.write("#021=false");
+            bw.newLine();
+            bw.write("#022=false");
+            bw.newLine();
+            bw.write("#031=false");
+            bw.newLine();
+            bw.write("#032=false");
+            
 
-       // Escribir el resto de la información en el archivo separada por comas
-       buffer.write(nombre + "," + numeroTelefono + "," + direccion);
-
-       // Cerrar el archivo
-       buffer.close();
-       escritor.close();
-   } catch (IOException e) {
-       e.printStackTrace();
-   }
-}
+            bw.close();
+            fw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Cliente_1.Banco.put(id,(id + ".txt"));
+    }
 }
 
