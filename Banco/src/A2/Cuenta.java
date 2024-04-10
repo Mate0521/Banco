@@ -9,6 +9,10 @@ public abstract class Cuenta extends Movimientos {
 		this.limite = limite;
 	}
 
+	public Cuenta(int id, String clave, String nombre, String numeroTelefono, String direccion) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public double getSaldo() {
 		return saldo;
 	}

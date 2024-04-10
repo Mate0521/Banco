@@ -2,7 +2,10 @@ package A2;
 
 //Clase TarjetaCredito
 public class TarjetaCredito extends Tarjeta {
-//Constructor
+	
+private Cliente_1 cliente;
+
+
 	public TarjetaCredito(double saldo, double deuda, double limite) {
 		super(saldo, deuda, limite);
 	}
@@ -17,6 +20,7 @@ public class TarjetaCredito extends Tarjeta {
 	public void retirar(double monto) {
 		if (monto <= saldo) {
 			saldo -= monto;
+			registrarMovimiento(this.cliente, "retirar: " + monto);
 		} else {
 			System.out.println("Fondos insuficientes.");
 		}
@@ -26,6 +30,7 @@ public class TarjetaCredito extends Tarjeta {
 	public void pagar(double monto) {
 		if (monto <= deuda) {
 			deuda -= monto;
+			registrarMovimiento(this.cliente, "Pagar: " + monto);
 		} else {
 			System.out.println("Monto de pago inválido.");
 		}
